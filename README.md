@@ -12,3 +12,11 @@ pip install -r requirements.txt
 ```
 python scrapy.py
 ```
+
+## Notes:
+> There is a `time.sleep` within the loop to avoid being banned
+> feel free to remove it adjust it to fit your needs
+
+## TODO:
+  - Adapt code to not fetch after p88 since there is no "unit test"
+  
