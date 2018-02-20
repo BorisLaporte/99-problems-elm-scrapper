@@ -1,15 +1,14 @@
 from lxml import html
-from lxml.cssselect import CSSSelector
 import requests
 import os
 import time
 import re
 
 
-
 URL = "https://johncrane.gitbooks.io/ninety-nine-elm-problems/content/"
 ELM_FOLDER = './elmproblems/'
 REGEX = "(?:/)(.\d{2}.?)(?:\.html)"
+
 
 def start():
     urls = get_urls(URL)
@@ -28,9 +27,10 @@ def parse_detail(tree, name, folder):
     if not os.path.exists(folder):
         os.makedirs(folder)
     filepath = os.path.join(folder, filename)
-    file = open(filepath,"w") 
+    file = open(filepath, "w")
     file.write(code.text_content())
     file.close()
+
 
 def get_urls(url):
     tree = scrap_page(URL)
@@ -38,9 +38,11 @@ def get_urls(url):
     linksTag = tree.xpath('//li[@data-level=1.4]/*/li/a')
     return [url + link.attrib['href'] for link in linksTag]
 
+
 def scrap_page(url):
     page = requests.get(url)
     return html.fromstring(page.content)
+
 
 if __name__ == '__main__':
     start()
