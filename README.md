@@ -2,6 +2,8 @@
 
 Link to the [problems](https://johncrane.gitbooks.io/ninety-nine-elm-problems/content/)
 
+> Ok this is a lie, there is not 99 problems. And only those with unit test are scrapped
+
 ## Install :cat:
 ```
 mkvirtualenv 99-problems --python=python3
@@ -14,9 +16,4 @@ python scrapy.py
 ```
 
 ## Notes:
-> There is a `time.sleep` within the loop to avoid being banned
-> feel free to remove it adjust it to fit your needs
-
-## TODO:
-  - Adapt code to not fetch after p88 since there is no "unit test"
-  
+> There is a `time.sleep` within the loop to avoid being banned. Feel free to remove it adjust it to fit your needs

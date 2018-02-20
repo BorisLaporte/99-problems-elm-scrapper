@@ -23,9 +23,11 @@ def start():
 
 
 def parse_detail(tree, name, folder):
-    code = tree.xpath("(//pre/code)[last()]")
     try:
-        code = code[0]
+        # We check if the title "Unit Test" exist
+        tree.xpath("//h2[text()='Unit Test']")[0]
+        # This what initerest us
+        code = tree.xpath("(//pre/code)[last()]")[0]
         filename = name + '.elm'
         if not os.path.exists(folder):
             os.makedirs(folder)
